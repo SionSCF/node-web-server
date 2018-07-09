@@ -5,6 +5,11 @@ const express = require('express');
 //Handlebar
 const hbs = require('hbs');
 const fs = require('fs');
+//This is to keep the port number for our app
+//process.env is an object that stores all of our environment
+//variables as key value pairs
+//using OR "||" to set default value for running the process locally
+const port = process.env.PORT || 8000;
 
 var app = express();
 
@@ -83,6 +88,11 @@ app.get('/about', (request, response) => {
 //bind our application to a port on our machine
 //the first argument is the port number
 //the second argument is optional. In this case, we will log a message
-app.listen(8000, () => {
+/*app.listen(8000, () => {
 	console.log('Server is up on port 8000');
+});*/
+
+//Dynamic port for Heroku
+app.listen(port, () => {
+	console.log(`Server is up and running on port ${port}`);
 });
