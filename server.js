@@ -31,9 +31,9 @@ app.use(express.static(__dirname + '/public'));
 });*/
 
 //advanced middleware. If next(); is not called, then it app will not proceed
-app.use((request, response, next) => {
+/*app.use((request, response, next) => {
 	response.render('maintenance.hbs');
-});
+});*/
 
 //To register hbs Helper. So, we don't have to hardcode the same code for
 //multiple functions. In this case, the getCurrentYear (new Date().getFullYear()) function)
